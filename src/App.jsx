@@ -1,13 +1,15 @@
 import React from 'react'
 import AddPost from './components/AddPost'
 import PostList from './components/PostList'
+import Navbar from './components/Navbar'
+import Layout from './components/Layout'
 
 const App = () => {
   return (
-    <div>
-      <AddPost />
-      <PostList />
-    </div>
+     <Layout>
+        <AddPost />
+        <PostList />
+     </Layout>
   )
 }
 
