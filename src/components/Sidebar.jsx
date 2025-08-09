@@ -1,5 +1,6 @@
 import React from 'react'
-import {Home , User , Bell , Settings} from 'lucide-react'
+import {Home , User , Bell , Settings , Users} from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
 
@@ -7,6 +8,7 @@ const Sidebar = () => {
     const sidebarLinks = [
         {text : 'Home' , icon : <Home />, link : '/'},
         {text : 'Profile' , icon : <User /> , link : '/profile' },
+        {text : 'Friends' , icon : <Users />, link : '/friends-list'},
         {text : 'Notifications' , icon : <Bell /> , link: '/notification'},
         {text : 'Settings' , icon : <Settings /> , link : '/settings'}
     ]
@@ -18,7 +20,7 @@ const Sidebar = () => {
             sidebarLinks.map(item => (
                 <li className='flex items-center gap-8 py-2'>
                     {item.icon}
-                    <span>{item.text}</span>
+                    <Link to={item.link}>{item.text}</Link>
                 </li>
             ))
            }

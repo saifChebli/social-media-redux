@@ -16,7 +16,7 @@ const AddPost = () => {
   
 
   const addNewPost = () => {
-    dispatch(addPost({content , image}));
+    dispatch(addPost(content , image));
     setContent("");
     setImage(null)
   };

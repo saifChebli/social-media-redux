@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "content": "Hello , this is my first post !",
+      "image": null,
+      "likes": 2,
+      "dislikes": 0,
+      "comments": [
+        {
+          "id": 1,
+          "text": "Nice post !"
+        }
+      ],
+      "createdAt": "2025-08-09T12:00:00Z"
+    },
+    {
+      "id": "2f9a",
+      "content": "another one !!",
+      "image": null,
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [],
+      "createdAt": "2025-08-09T11:18:57.535Z"
+    },
+    {
+      "id": "37a5",
+      "content": "third post !!",
+      "image": "blob:http://localhost:5173/8833b4a2-3710-4692-bf98-8b16eaa924b4",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [],
+      "createdAt": "2025-08-09T11:21:00.230Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Alex"
+    }
+  ]
+}

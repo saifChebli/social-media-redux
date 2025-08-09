@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { likePost , addComment, dislikePost} from "../redux/actions";
+import { likePost , addComment, dislikePost , fetchPost} from "../redux/actions";
 import { Heart , ThumbsDown} from "lucide-react";
 
 
 const PostList = () => {
-  const posts = useSelector((state) => state.posts);
+  const {posts , loading , error} = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const [commentValue , setCommentValue] = useState({})
@@ -30,6 +30,13 @@ const PostList = () => {
     
  }
  
+  useEffect(() =>{
+    dispatch(fetchPost())
+  },[])
+
+  if (error) return <p>{error}</p>
+
+
   return (
     <div>
       {posts.map((post) => (
@@ -64,7 +71,7 @@ const PostList = () => {
               {
                 post.comments.map((comment , index) => (
                   <p key={index} className="text-gray-400 font-semibold capitalize py-2">
-                    {comment[post.id]}
+                    {comment.text}
                   </p>
                 ))
               }

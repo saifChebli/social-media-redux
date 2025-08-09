@@ -1,15 +1,19 @@
 import React from 'react'
-import AddPost from './components/AddPost'
-import PostList from './components/PostList'
-import Navbar from './components/Navbar'
 import Layout from './components/Layout'
+import Home from './pages/Home'
+import FriendsList from './pages/FriendsList'
+import {BrowserRouter as Router , Routes , Route} from 'react-router-dom'
 
 const App = () => {
   return (
-     <Layout>
-        <AddPost />
-        <PostList />
-     </Layout>
+     <Router>
+         <Routes>
+            <Route path='/' element={<Layout />}>
+               <Route index element={<Home />} />
+               <Route path='/friends-list' element = {<FriendsList />} />
+            </Route>
+         </Routes>
+     </Router>
   )
 }
 
